@@ -52,8 +52,15 @@ export default function Home() {
           </Col>
         </Row>
       </div>
-      <Row className="chatBox" gutter={4}>
-            <Col span={8} className="leftIcon">
+      <Image
+        src="/index/index1.png"
+        alt="背景图片"
+        preview={false}
+        id="backImg"
+        height={img}
+      ></Image>
+      <Row className="chatBox">
+            <Col span={10} className="leftIcon">
                   <span>
                     <Image
                       src="/index/qq.png"
@@ -71,7 +78,9 @@ export default function Home() {
                     />
                   </span>
                   </Col>
-                <Col span={10} className="rightIcon">
+                  <Col span={8}>
+                  </Col>
+                <Col span={6} className="rightIcon">
                   <span>
                     <Image
                       src="/index/github.png"
@@ -82,13 +91,6 @@ export default function Home() {
                   </span>
                 </Col>
           </Row>
-      <Image
-        src="/index/index1.png"
-        alt="背景图片"
-        preview={false}
-        id="backImg"
-        height={img}
-      ></Image>
     </>
   );
 }
