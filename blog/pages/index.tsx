@@ -28,12 +28,12 @@ export default function Home() {
         <Row>
           <Col span="24">
             <div className="touxiangBox">
-            <Image
-              src="/index/touxiang.png"
-              preview={false}
-              alt="头像"
-              id="touxiang"
-            ></Image>
+              <Image
+                src="/index/touxiang.png"
+                preview={false}
+                alt="头像"
+                id="touxiang"
+              ></Image>
             </div>
             <div className="spanBox">
               <ul className="left">
@@ -52,6 +52,36 @@ export default function Home() {
           </Col>
         </Row>
       </div>
+      <Row className="chatBox" gutter={4}>
+            <Col span={8} className="leftIcon">
+                  <span>
+                    <Image
+                      src="/index/qq.png"
+                      alt="qq"
+                      preview={false}
+                      id="qq"
+                    />
+                  </span>
+                  <span>
+                    <Image
+                      src="/index/wechat.png"
+                      alt="wechat"
+                      preview={false}
+                      id="wechat"
+                    />
+                  </span>
+                  </Col>
+                <Col span={10} className="rightIcon">
+                  <span>
+                    <Image
+                      src="/index/github.png"
+                      alt="github"
+                      preview={false}
+                      id="github"
+                    />
+                  </span>
+                </Col>
+          </Row>
       <Image
         src="/index/index1.png"
         alt="背景图片"
