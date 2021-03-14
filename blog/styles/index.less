@@ -1,0 +1,69 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#box {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  .touxiangBox {
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
+    #touxiang {
+      width: 10rem;
+      height: 10rem;
+      animation: rotate 15s infinite linear;
+    }
+  }
+  .spanBox {
+    width: 100%;
+    height: 5rem;
+    margin-top: 15rem;
+    .left {
+      width: 30%;
+      list-style: none;
+      display: flex;
+      font-size: 3rem;
+      color: white;
+      justify-content: space-evenly;
+      position: absolute;
+    }
+    .right {
+      margin-left: 70%;
+      list-style: none;
+      display: flex;
+      width: 30%;
+      font-size: 3rem;
+      color: white;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+#backImg {
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 762px) {
+  .touxiangBox {
+    margin-top: 30%;
+  }
+  .spanBox {
+    display: none;
+  }
+}
+
