@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Header from "../components/Header/Header";
 import General from '../components/General/General'
+import Class from '../components/Class/Class'
+import Footer from '../components/Footer/Footer'
 
 export default function Home() {
 
@@ -14,6 +16,8 @@ export default function Home() {
       </Head>
       <Header></Header>
       <General></General>
+      <Class></Class>
+      <Footer></Footer>
     </>
   );
 }

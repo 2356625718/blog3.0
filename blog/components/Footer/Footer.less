@@ -1,0 +1,51 @@
+.footRow {
+  height: auto;
+  background-color: black;
+  padding: 1rem;
+  .footCol {
+    width: 85%;
+    height: 80%;
+    .info {
+      height: auto;
+      padding: 10px;
+      .title {
+        font-size: 0.9rem;
+        color: white;
+        letter-spacing: 6px;
+        position: relative;
+        transform:translateX(1.2rem);
+        font-weight: 350;
+      }
+      .title::before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #f12448;
+        position: absolute;
+        top: 10%;
+        transform: translateX(-1rem);
+      }
+      .content {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        color: #6D7685;
+        line-height: 1.8;
+        word-break: break-all;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 962px) {
+  .footRow {
+    padding: 10px !important;
+    .footCol {
+      width: 100vw !important;
+    }
+  }
+}
