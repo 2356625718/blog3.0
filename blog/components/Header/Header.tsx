@@ -1,18 +1,51 @@
-import React from 'react'
-import "./Header.less"
-import { Button } from 'antd'
+import React from "react";
+import "./Header.less";
+import { Row, Col, Popover } from "antd";
+import {
+  SearchOutlined,
+  FieldTimeOutlined,
+  CoffeeOutlined,
+} from "@ant-design/icons";
 
 const Header = () => {
   return (
-    <div id="headRow">
-      <div className="headCol">
-        <span>周雨的博客</span>
-      </div>
-      <div className="headCol">
-        <Button type="primary">注册/登录</Button>
-      </div>
-    </div>
-  )
-}
+    <Row className="headRow" align="middle" justify="space-around">
+      <Col
+        className="logoBox"
+        xxl={3}
+        xl={3}
+        lg={3}
+        md={5}
+        sm={5}
+        xs={9}
+        pull={1}
+      >
+        <div className="logo">
+          <span>Z</span>
+          <span>Y</span>
+          <span>'</span>
+          <span className="coffice">
+            <CoffeeOutlined />
+          </span>
+          <span>.</span>
+        </div>
+      </Col>
+      <Col className="controlBox" span="3" offset={8}>
+        <div className="control">
+          <Popover content={<span className="controlText">搜索</span>}>
+            <span className="search">
+              <SearchOutlined />
+            </span>
+          </Popover>
+          <Popover content={<span className="controlText">浏览记录</span>}>
+            <span className="history">
+              <FieldTimeOutlined />
+            </span>
+          </Popover>
+        </div>
+      </Col>
+    </Row>
+  );
+};
 
 export default Header;
