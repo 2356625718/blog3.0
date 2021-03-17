@@ -9,7 +9,8 @@ import { GetServerSideProps } from "next"
 import { get } from "../utils/util_request"
 import cfg from "../utils/util_config"
 
-export default function Home({ page }: any) {
+export default function Home({ page, news }: any) {
+  console.log(news)
   return (
     <>
       <Head>
@@ -18,19 +19,21 @@ export default function Home({ page }: any) {
       </Head>
       <Header></Header>
       <General data={page}></General>
-      <Class></Class>
+      <Class news={news}></Class>
       <Footer></Footer>
     </>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const url = cfg.path + 'indexHead'
-  console.log("a", url)
-  let page: any = await get(url)
+  const pageUrl = cfg.path + 'indexHead'
+  const newsUrl = cfg.path + 'indexNew'
+  let page: any = await get(pageUrl)
+  let news: any = await get(newsUrl)
   return {
     props: {
-      page: page
+      page: page,
+      news: news
     }
   }
 }

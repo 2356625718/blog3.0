@@ -6,7 +6,6 @@ import cfg from "../../utils/util_config";
 const General = ({ data }: any) => {
   //首部文章信息
   const page = data.msg;
-
   return (
     <>
       {/* 首部文章栏 */}
@@ -120,7 +119,7 @@ const General = ({ data }: any) => {
           </div>
           <div className="classItem">
             <Image
-              src="/index/2.png"
+              src='/index/2.png'
               preview={false}
               alt="图片"
               className="fixImg"

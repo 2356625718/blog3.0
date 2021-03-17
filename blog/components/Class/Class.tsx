@@ -2,8 +2,10 @@ import "./Class.less"
 import React from "react"
 import { Row, Col, Image } from "antd"
 import { EyeOutlined } from "@ant-design/icons"
+import cfg from "../../utils/util_config";
 
-const Class = () => {
+const Class = ({ news }: any) => {
+
   return (
     <>
     <Row justify="center" className="breadRow">
@@ -16,32 +18,30 @@ const Class = () => {
       </Col>
     </Row>
     <div className="content">
-      <div className="page">
+      {news.msg.map((item: any, index: any) => {
+        return (
+          <div className="page" key={index}>
         <div className="imgBox"><Image
-                src="/index/renwu.png"
+                src={cfg.imgPath + item.p_img}
                 preview={false}
                 alt="图片"
                 className="fixImg"
                 height="100%"
               /></div>
         <div className="tag">
-          <span>Vue</span>
+          <span>{item.p_tag}</span>
         </div>
         <div className="intro">
-          这是我写的一篇博客，希望大家喜欢这是我写的一篇博客，希望大家喜欢这是我写的一篇博客，希望大家喜欢这是我写的一篇博客，希望大家喜欢这是我写的一篇博客，希望大家喜欢
+          {item.p_title}
         </div>
         <div className="info">
-          <span className="left">2月前</span>
-          <span className="right"><EyeOutlined className="rightIcon"/>1190</span>
+          <span className="left">{item.p_time}</span>
+          <span className="right"><EyeOutlined className="rightIcon"/>{item.p_view}</span>
         </div>
       </div>
-      <div className="page"></div>
-      <div className="page"></div>
-      <div className="page"></div>
-      <div className="page"></div>
-      <div className="page"></div>
-      <div className="page"></div>
-      <div className="page"></div>
+        )
+      })}
+      
     </div>
     </>
   )
