@@ -26,6 +26,10 @@
         left: 5%;
       }
 
+      .jianjieText:hover {
+        color: lightskyblue;
+      }
+
       .jianjie {
         width: 100%;
         border-radius: 8px;
@@ -74,6 +78,9 @@
             bottom: 5%;
             left: 5%;
           }
+          .rightText:hover {
+            color: lightskyblue;
+          }
         }
 
         .imageBox2 {
@@ -103,6 +110,10 @@
             bottom: 5%;
             left: 5%;
           }
+
+          .rightText:hover {
+            color: lightskyblue;
+          }
         }
       }
     }
@@ -113,12 +124,14 @@
 .fixRow {
   display: none;
   width: 100%;
+
   .fix {
     height: 18vh;
     background-color: #161f27;
     display: flex;
     justify-content: center;
     align-items: center;
+
     .fixBox {
       width: 90%;
       height: 95%;
@@ -128,6 +141,7 @@
       flex-direction: row;
       overflow-x: auto;
       margin-right: 1rem;
+
       .imgBox {
         width: 40%;
         height: 100%;
@@ -152,15 +166,18 @@
           display: inline-block;
           white-space: pre-wrap;
           width: 92%;
-          height: 50%;
           margin: 5px;
           color: white;
           font-size: 1px;
           font-weight: 320;
           position: absolute;
-          bottom: 10%;
+          bottom: 1%;
           left: 1%;
           text-overflow: ellipsis;
+        }
+
+        .rightText:hover {
+          color: lightskyblue;
         }
       }
     }
@@ -177,7 +194,7 @@
   justify-content: space-between;
 
   .classItem {
-    width: 10rem;
+    width: 12rem;
     height: 100%;
     overflow: hidden;
     border-radius: 7px;
@@ -202,13 +219,18 @@
       width: 92%;
       height: 50%;
       color: white;
-      font-size: 1px;
-      font-weight: 320;
+      font-size: 1rem;
+      font-weight: 350;
       position: absolute;
       bottom: 10%;
       left: 1%;
       text-align: center;
       text-overflow: ellipsis;
+      letter-spacing: 3px;
+    }
+
+    .rightText:hover {
+      color: lightskyblue;
     }
   }
 }
