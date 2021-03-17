@@ -2,12 +2,10 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportExperience from '../../../app/controller/experience';
-import ExportLogin from '../../../app/controller/login';
+import ExportIndex from '../../../app/controller/index';
 
 declare module 'egg' {
   interface IController {
-    experience: ExportExperience;
-    login: ExportLogin;
+    index: ExportIndex;
   }
 }

@@ -3,6 +3,7 @@ import { Application } from 'egg';
 
 export default (app: Application) => {
   const { controller, router } = app;
-  router.post('/login', controller.login.login)
-  router.get('/experience', controller.experience.getExperience)
+  router.get('/indexHead', controller.index.getHead)
+  router.get('/indexNew', controller.index.getNew)
+  router.get('/indexHot', controller.index.getHot)
 };
