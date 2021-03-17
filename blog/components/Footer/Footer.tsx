@@ -2,6 +2,11 @@ import React from 'react'
 import "./Footer.less"
 import { Row, Col } from 'antd'
 import { Content } from 'antd/lib/layout/layout'
+import {
+  QqOutlined,
+  WechatOutlined,
+  GithubOutlined
+} from "@ant-design/icons";
 
 const Footer = () => {
   return (
@@ -11,17 +16,33 @@ const Footer = () => {
         <Row>
           <Col xxl={8} xl={8} lg={8} md={24} sm={24} xs={24} className="info">
             <div className="title">关于</div>
-            <p className="content">ZUOLUOTV™ 制作人，左左文化创始人。 家在深圳，广州暨南大学，在北京(猎豹移动)和上海(阅文集团)当过5年前端工程师，俗称程序员，2018年辞职创业。 科技 / 旅行 / 摄影 / 生活方式</p>
+            <p className="content">博主就读于四川农业大学计算机科学与技术专业，目前大三，主要学习方向为前端。
+            本博客使用nextjs+eggjs开发，如有建议，欢迎提出。</p>
+            <div className="chat">
+              <div className="box"><QqOutlined /></div>
+              <div className="box"><WechatOutlined /></div>
+              <div className="box"><GithubOutlined /></div>
+            </div>
           </Col>
           <Col xxl={8} xl={8} lg={8} md={24} sm={24} xs={24} className="info">
-            <div className="title">关于</div>
-            <p className="content">ZUOLUOTV™ 制作人，左左文化创始人。 家在深圳，广州暨南大学，在北京(猎豹移动)和上海(阅文集团)当过5年前端工程师，俗称程序员，2018年辞职创业。 科技 / 旅行 / 摄影 / 生活方式</p>
+            <div className="title">社交媒体</div>
+            <div className="content2">
+              <a className="link">哔哩哔哩</a>
+              <a className="link">新浪微博</a>
+            </div>
           </Col>
           <Col xxl={8} xl={8} lg={8} md={24} sm={24} xs={24} className="info">
-            <div className="title">关于</div>
-            <p className="content">ZUOLUOTV™ 制作人，左左文化创始人。 家在深圳，广州暨南大学，在北京(猎豹移动)和上海(阅文集团)当过5年前端工程师，俗称程序员，2018年辞职创业。 科技 / 旅行 / 摄影 / 生活方式</p>
+            <div className="title">导航</div>
+            <div className="content">
+              <a className="link2">ZHOUYU'BlOG</a>
+            </div>
           </Col>
         </Row>
+      </Col>
+    </Row>
+    <Row className="last">
+      <Col xxl={10} xl={10} lg={10} md={21} sm={21} xs={21} push="2" className="lastCol">
+        <p>Copyright © 2011-2021 周雨的独立博客. 粤ICP备14004235号</p>
       </Col>
     </Row>
     </>

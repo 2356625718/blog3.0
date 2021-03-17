@@ -1,6 +1,6 @@
 .footRow {
   height: auto;
-  background-color: black;
+  background-color: #161F27;
   padding: 1rem;
   .footCol {
     width: 85%;
@@ -37,7 +37,61 @@
         word-break: break-all;
         text-align: justify;
       }
+      .content2 {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        color: #6D7685;
+        line-height: 1.8;
+        word-break: break-all;
+        text-align: justify;
+        .link {
+          width: 25%;
+        }
+        .link2 {
+          width: 33%;
+        }
+      }
+      .chat {
+        margin-top: 1rem;
+        width: 40%;
+        min-width: 150px;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        .box {
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 50%;
+          background-color: #222B30;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.3rem;
+          color:#7B8591;
+        }
+        .box:hover {
+          background-color: black;
+          color: white;
+        }
+      }
     }
+  }
+}
+
+.last {
+  border-top: 1px solid rgb(59, 61, 63);
+  height: 6vh;
+  background-color: #161F27;
+  .lastCol {
+    height: 100%;
+    font-size: 0.3rem;
+    color:#7B8591;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
   }
 }
 
