@@ -10,7 +10,6 @@ import { get } from "../utils/util_request"
 import cfg from "../utils/util_config"
 
 export default function Home({ page, news }: any) {
-  console.log(news)
   return (
     <>
       <Head>
@@ -21,11 +20,12 @@ export default function Home({ page, news }: any) {
       <General data={page}></General>
       <Class news={news}></Class>
       <Footer></Footer>
+      <div className="top"></div>
     </>
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const pageUrl = cfg.path + 'indexHead'
   const newsUrl = cfg.path + 'indexNew'
   let page: any = await get(pageUrl)

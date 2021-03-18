@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Image } from "antd";
+import { Row, Col, Image,} from "antd";
 import "./General.less";
 import cfg from "../../utils/util_config";
 
@@ -119,7 +119,7 @@ const General = ({ data }: any) => {
           </div>
           <div className="classItem">
             <Image
-              src='/index/2.png'
+              src="/index/2.png"
               preview={false}
               alt="图片"
               className="fixImg"

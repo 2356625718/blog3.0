@@ -6,4 +6,5 @@ export default (app: Application) => {
   router.get('/indexHead', controller.index.getHead)
   router.get('/indexNew', controller.index.getNew)
   router.get('/indexHot', controller.index.getHot)
+  router.get('/indexAll', controller.index.getAllStep)
 };

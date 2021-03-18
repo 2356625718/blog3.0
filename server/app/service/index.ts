@@ -38,6 +38,20 @@ export default class Index extends Service {
       console.error(e)
     }
   }
+
+  //按步长依次获取文章
+  public async getAllStep (start) {
+    const { service } = this
+    try {
+      await service.database.connect()
+      let end = start + 7
+      let data: any = await service.database.query("select * from page where p_id between ? and ?", [start, end])
+      formatTime(data)
+      return data;
+    } catch (e) {
+      console.error(e)
+    }
+  }
 }
 
 

@@ -6,7 +6,6 @@ export default class Index extends Controller {
     let { ctx, service } = this
     let data = await service.index.getHead()
     ctx.set("Content-Type", "application/json;charset=utf-8")
-    console.log(data)
     ctx.body = {
       status: 200,
       msg: data
@@ -26,6 +25,17 @@ export default class Index extends Controller {
   public async getHot () {
     let { ctx, service } = this
     let data = await service.index.getHot()
+    ctx.set("Content-Type", "application/json;charset=utf-8")
+    ctx.body = {
+      status: 200,
+      msg: data
+    }
+  }
+
+  //按步长获取依次获取文章
+  public async getAllStep () {
+    let { ctx, service } = this
+    let data = await service.index.getAllStep(parseInt(ctx.query.start))
     ctx.set("Content-Type", "application/json;charset=utf-8")
     ctx.body = {
       status: 200,
