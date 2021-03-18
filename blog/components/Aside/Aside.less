@@ -1,0 +1,55 @@
+@keyframes slide {
+  0% {
+    position: relative;
+    bottom: 0;
+  }
+
+  100% {
+    position: relative;
+    bottom: 5rem;
+    display: none;
+  }
+}
+
+@keyframes slide2 {
+  0% {
+    position: relative;
+    bottom: 0;
+  }
+
+  100% {
+    position: relative;
+    bottom: 6px;
+    color: white;
+  }
+}
+
+
+.top {
+  width: 3.4rem;
+  height: 3.4rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  right: 1%;
+  top: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #6D7685;
+  border-radius: 7px;
+  overflow: hidden;
+  letter-spacing: 2px;
+}
+
+.top:hover {
+  font-size: 1rem;
+  .icon {
+    animation: slide 0.8s linear;
+    animation-fill-mode: forwards;
+  }
+  .font {
+   animation: slide2 0.3s linear;
+   animation-fill-mode: forwards;
+  }
+}

@@ -8,6 +8,7 @@ import Footer from '../components/Footer/Footer'
 import { GetServerSideProps } from "next"
 import { get } from "../utils/util_request"
 import cfg from "../utils/util_config"
+import Aside from "../components/Aside/Aside"
 
 export default function Home({ page, news }: any) {
   return (
@@ -20,7 +21,7 @@ export default function Home({ page, news }: any) {
       <General data={page}></General>
       <Class news={news}></Class>
       <Footer></Footer>
-      <div className="top"></div>
+      <Aside></Aside>
     </>
   );
 }
