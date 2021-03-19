@@ -1,13 +1,13 @@
-import React from "react";
+import React, {useEffect, useState} from "react"
 import Head from "next/head";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Aside from "../components/Aside/Aside";
-import PageList from "../components/PageList/PageList"
-import "../styles/page.less"
+import ContentCenter from "../components/ContentCenter/ContentCenter"
 
+const Content = () => {
+  
 
-const Page = () => {
   return (
     <>
       <Head>
@@ -19,13 +19,14 @@ const Page = () => {
           content="initial-scale=1.0, width=device-width,user-scalable=no"
         />
       </Head>
-      <div className="indexHead"><Header></Header></div>
-      <PageList></PageList>
+      <div className="indexHead">
+      <Header></Header>
+      </div>
+      <ContentCenter></ContentCenter>
       <Footer></Footer>
-      <Aside></Aside>
+      <Aside showLike={true}></Aside>
     </>
-  );
-};
+  )
+}
 
-export default Page;
-
+export default Content;

@@ -1,10 +1,12 @@
-import "./Class.less";
+import "./IndexClass.less";
 import React, { useState, useEffect } from "react";
 import { Row, Col, Image, Skeleton, Spin, Alert } from "antd";
 import { EyeOutlined, SmileOutlined, LoadingOutlined } from "@ant-design/icons";
 import cfg from "../../utils/util_config";
 import { get } from "../../utils/util_request";
 import { debounce } from "../../utils/util_func"
+import {useRouter} from "next/router"
+ 
 const Class = ({ news }: any) => {
   const [cs, setCs] = useState(0)
   const [list, setList] = useState(news.msg)
@@ -13,6 +15,17 @@ const Class = ({ news }: any) => {
   //获取所有文章开始序号
   let start = 1
   let [end, setEnd] = useState(false)
+
+  //路由跳转到文章
+  const router = useRouter()
+
+  //路由跳转到文章
+  const navigate = (info: any) => {
+    window.sessionStorage.setItem("page", JSON.stringify(info))
+    router.push({
+      pathname: "/content",
+    })
+  }
 
   //获取数据
   const setData = async (id: number) => {
@@ -57,21 +70,21 @@ const Class = ({ news }: any) => {
       <Row justify="center" className="breadRow">
         <Col span="24" className="breadCol">
           <span
-            className={cs === 0 ? "class" : ""}
+            className={cs === 0 ? "classify" : ""}
             onPointerDown={() => setData(0)}
           >
             最新
           </span>
           <span className="divider">/</span>
           <span
-            className={cs === 1 ? "class" : ""}
+            className={cs === 1 ? "classify" : ""}
             onPointerDown={() => setData(1)}
           >
             最热
           </span>
           <span className="divider">/</span>
           <span
-            className={cs === 2 ? "class" : ""}
+            className={cs === 2 ? "classify" : ""}
             onPointerDown={() => setData(2)}
           >
             所有
@@ -81,7 +94,7 @@ const Class = ({ news }: any) => {
       <div className="content">
         {list.map((item: any, index: any) => {
           return (
-            <div className="page" key={index}>
+            <div className="page" key={index} onPointerDown={() => navigate(item)}>
               <div className="imgBox" style={{display:load ? 'none' : ''}}>
                 <Image
                   src={cfg.imgPath + item.p_img}

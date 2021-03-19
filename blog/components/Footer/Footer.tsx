@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons";
 
 const Footer = () => {
+
   return (
     <>
     <Row justify="center" className="footRow">
@@ -32,7 +33,7 @@ const Footer = () => {
           <Col xxl={8} xl={8} lg={8} md={24} sm={24} xs={24} className="info">
             <div className="title">导航</div>
             <div className="content">
-              <a className="link2">ZHOUYU'BlOG</a>
+              <a className="link2" href="http://127.0.0.1:3000/">ZHOUYU'BlOG</a>
             </div>
           </Col>
         </Row>

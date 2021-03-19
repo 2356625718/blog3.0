@@ -6,9 +6,13 @@ import {
   FieldTimeOutlined,
   CoffeeOutlined,
 } from "@ant-design/icons";
+import Router from "next/router"
 
 const Header = () => {
 
+  const toIndex = () => {
+    Router.push('http://127.0.0.1:3000/')
+  }
   return (
       <Affix offsetTop={0}>
       <Row className="headRow" align="middle" justify="space-around">
@@ -22,7 +26,7 @@ const Header = () => {
         xs={9}
         pull={1}
       >
-        <div className="logo">
+        <div className="logo" onPointerDown={() => toIndex()}>
           <span>Z</span>
           <span>Y</span>
           <span>'</span>
