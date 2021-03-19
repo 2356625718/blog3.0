@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Header.less";
-import { Row, Col, Popover } from "antd";
+import { Row, Col, Popover, Affix } from "antd";
 import {
   SearchOutlined,
   FieldTimeOutlined,
@@ -8,8 +8,10 @@ import {
 } from "@ant-design/icons";
 
 const Header = () => {
+
   return (
-    <Row className="headRow" align="middle" justify="space-around">
+      <Affix offsetTop={0}>
+      <Row className="headRow" align="middle" justify="space-around">
       <Col
         className="logoBox"
         xxl={3}
@@ -45,6 +47,7 @@ const Header = () => {
         </div>
       </Col>
     </Row>
+    </Affix>   
   );
 };
 

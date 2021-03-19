@@ -35,6 +35,7 @@ const Class = ({ news }: any) => {
     setTimeout(() => setLoad(false), 400)
     }
 
+  //加载更多
   const loadMore = () => {
     window.addEventListener("scroll", debounce( async () => {
       let rect = document.getElementsByClassName("content")[0].getBoundingClientRect()

@@ -15,9 +15,12 @@ export default function Home({ page, news }: any) {
     <>
       <Head>
         <title>周雨｜博客</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="author" content="周雨" />
+        <meta name="keywords" content="vue,react,angular,nodejs" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width,user-scalable=no" />
       </Head>
-      <Header></Header>
+      <div className="indexHead"><Header></Header>
+      </div>
       <General data={page}></General>
       <Class news={news}></Class>
       <Footer></Footer>
