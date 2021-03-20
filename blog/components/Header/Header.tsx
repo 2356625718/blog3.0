@@ -18,7 +18,7 @@ const Header = () => {
   //返回主页
   const toIndex = () => {
     message.loading("Back Index...", 0.5);
-    Router.push("http://127.0.0.1:3000/");
+    Router.push("http://www.zhouyu.我爱你/");
   };
 
   //历史记录

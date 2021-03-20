@@ -4,7 +4,6 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Aside from "../components/Aside/Aside";
 import PageList from "../components/PageList/PageList";
-import "../styles/page.less";
 
 const Page = () => {
   return (

@@ -42,7 +42,7 @@ const General = ({ data }: any) => {
         >
           <div className="jianjieBox" onPointerDown={() => navigate(page[0])}>
             <Image
-              src={cfg.imgPath + page[0].p_img}
+              src={cfg.imgPath + page[0].p_img2}
               alt="图片"
               preview={false}
               className="jianjie"
@@ -58,7 +58,7 @@ const General = ({ data }: any) => {
             <div className="rightBox">
               <div className="imageBox" onPointerDown={() => navigate(page[1])}>
                 <Image
-                  src={cfg.imgPath + page[1].p_img}
+                  src={cfg.imgPath + page[1].p_img2}
                   preview={false}
                   alt="图片"
                   className="rightImg"
@@ -68,7 +68,7 @@ const General = ({ data }: any) => {
               </div>
               <div className="imageBox" onPointerDown={() => navigate(page[2])}>
                 <Image
-                  src={cfg.imgPath + page[2].p_img}
+                  src={cfg.imgPath + page[2].p_img2}
                   preview={false}
                   alt="图片"
                   className="rightImg"
@@ -83,7 +83,7 @@ const General = ({ data }: any) => {
                 onPointerDown={() => navigate(page[3])}
               >
                 <Image
-                  src={cfg.imgPath + page[3].p_img}
+                  src={cfg.imgPath + page[3].p_img2}
                   preview={false}
                   alt="图片"
                   className="rightImg"
@@ -96,7 +96,7 @@ const General = ({ data }: any) => {
                 onPointerDown={() => navigate(page[4])}
               >
                 <Image
-                  src={cfg.imgPath + page[4].p_img}
+                  src={cfg.imgPath + page[4].p_img2}
                   preview={false}
                   alt="图片"
                   className="rightImg"
@@ -121,7 +121,7 @@ const General = ({ data }: any) => {
                     onPointerDown={() => navigate(item)}
                   >
                     <Image
-                      src={cfg.imgPath + item.p_img}
+                      src={cfg.imgPath + item.p_img2}
                       preview={false}
                       alt="图片"
                       className="fixImg"

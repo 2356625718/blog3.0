@@ -85,7 +85,7 @@ const Footer = () => {
           push="2"
           className="lastCol"
         >
-          <p>Copyright © 2011-2021 周雨的独立博客. 粤ICP备14004235号</p>
+          <p>Copyright © 2020-2021 周雨的独立博客. 蜀ICP备20016557号</p>
         </Col>
       </Row>
     </>

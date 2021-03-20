@@ -110,7 +110,7 @@ const Class = ({ news }: any) => {
             >
               <div className="imgBox" style={{ display: load ? "none" : "" }}>
                 <Image
-                  src={cfg.imgPath + item.p_img}
+                  src={cfg.imgPath + item.p_img2}
                   preview={false}
                   alt="图片"
                   className="fixImg"

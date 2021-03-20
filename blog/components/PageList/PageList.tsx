@@ -51,7 +51,7 @@ const PageList = () => {
             >
               <div className="imgBox">
                 <Image
-                  src={cfg.imgPath + item.p_img}
+                  src={cfg.imgPath + item.p_img2}
                   preview={false}
                   alt="图片"
                   className="fixImg"
