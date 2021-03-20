@@ -27,6 +27,7 @@
     border-radius: 9px;
     overflow: hidden;
     cursor: pointer;
+
     .logo {
       height: 100%;
       background-color: #86090a;
@@ -61,11 +62,56 @@
       }
 
       .search {
-        margin-right: 20%;
+        margin-right: 25%;
+      }
+
+      .history {
+        margin-right: 2rem;
       }
     }
   }
 }
+
+.searchBox {
+  .shadow {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 998;
+    background-color: rgba(90, 84, 84, 0.8);
+    filter: blur(10px);
+  }
+
+  .search {
+    padding: 0 0 0 1rem;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    width: 50%;
+    height: 8%;
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    font-weight: 350;
+    letter-spacing: 5px;
+  }
+
+  .hidSearch {
+    color: white;
+    font-size: 2rem;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
+
+  .hidSearch:hover {
+    color: lightblue;
+  }
+}
+
 
 @media screen and (max-width: 992px) {
   .logoBox {

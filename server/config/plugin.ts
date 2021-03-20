@@ -1,10 +1,10 @@
-import { EggPlugin } from 'egg';
+import { EggPlugin } from "egg";
 
 const plugin: EggPlugin = {
   cors: {
-	  enable: true,
-	  package: 'egg-cors'
-	},
+    enable: true,
+    package: "egg-cors",
+  },
   // static: true,
   // nunjucks: {
   //   enable: true,
@@ -13,8 +13,8 @@ const plugin: EggPlugin = {
 
   mysql: {
     enable: true,
-    package: 'egg-mysql'
-  }
+    package: "egg-mysql",
+  },
 };
 
 export default plugin;

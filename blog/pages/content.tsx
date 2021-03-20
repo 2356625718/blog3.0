@@ -1,13 +1,11 @@
-import React, {useEffect, useState} from "react"
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Aside from "../components/Aside/Aside";
-import ContentCenter from "../components/ContentCenter/ContentCenter"
+import ContentCenter from "../components/ContentCenter/ContentCenter";
 
 const Content = () => {
-  
-
   return (
     <>
       <Head>
@@ -20,13 +18,13 @@ const Content = () => {
         />
       </Head>
       <div className="indexHead">
-      <Header></Header>
+        <Header></Header>
       </div>
       <ContentCenter></ContentCenter>
       <Footer></Footer>
       <Aside showLike={true}></Aside>
     </>
-  )
-}
+  );
+};
 
 export default Content;

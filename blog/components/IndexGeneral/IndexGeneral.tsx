@@ -1,28 +1,30 @@
-import { Row, Col, Image,} from "antd";
+import { Row, Col, Image, message } from "antd";
 import "./IndexGeneral.less";
 import cfg from "../../utils/util_config";
-import { useRouter } from 'next/router'
-
+import { useRouter } from "next/router";
+import { get } from "../../utils/util_request";
 
 const General = ({ data }: any) => {
   //路由
-  const router = useRouter()
+  const router = useRouter();
   //路由跳转到文章
   const navigate = (info: any) => {
-    window.sessionStorage.setItem("page", JSON.stringify(info))
+    message.loading("loading...", 0.5);
+    window.sessionStorage.setItem("page", JSON.stringify(info));
     router.push({
       pathname: "/content",
-    })
-  }
+    });
+  };
   //路由跳转到分类列表
-  const toClass = (tag: string) => {
+  const toClass = async (tag: string) => {
+    message.loading("loading...", 0.5);
+    let { msg } = await get(cfg.path + "searchTag?tag=" + tag);
+    sessionStorage.setItem("tag", tag);
+    sessionStorage.setItem("pages", JSON.stringify(msg));
     router.push({
       pathname: "/page",
-      query: {
-        tag: tag
-      }
-    })
-  }
+    });
+  };
   //首部文章信息
   const page = data.msg;
   return (
@@ -76,7 +78,10 @@ const General = ({ data }: any) => {
               </div>
             </div>
             <div className="rightBox">
-              <div className="imageBox2" onPointerDown={() => navigate(page[3])}>
+              <div
+                className="imageBox2"
+                onPointerDown={() => navigate(page[3])}
+              >
                 <Image
                   src={cfg.imgPath + page[3].p_img}
                   preview={false}
@@ -86,7 +91,10 @@ const General = ({ data }: any) => {
                 />
                 <span className="rightText">{page[3].p_title}</span>
               </div>
-              <div className="imageBox2" onPointerDown={() => navigate(page[4])}>
+              <div
+                className="imageBox2"
+                onPointerDown={() => navigate(page[4])}
+              >
                 <Image
                   src={cfg.imgPath + page[4].p_img}
                   preview={false}
@@ -107,7 +115,11 @@ const General = ({ data }: any) => {
               if (index === 0) return;
               else {
                 return (
-                  <li className="imgBox" key={index} onPointerDown={() => navigate(item)}>
+                  <li
+                    className="imgBox"
+                    key={index}
+                    onPointerDown={() => navigate(item)}
+                  >
                     <Image
                       src={cfg.imgPath + item.p_img}
                       preview={false}
@@ -126,7 +138,7 @@ const General = ({ data }: any) => {
       {/* 分类 */}
       <Row justify="center">
         <Col span={22} className="class">
-          <div className="classItem" onPointerDown={() => toClass('基础')}>
+          <div className="classItem" onPointerDown={() => toClass("基础")}>
             <Image
               src="/index/1.png"
               preview={false}
@@ -136,7 +148,7 @@ const General = ({ data }: any) => {
             />
             <span className="rightText">基础</span>
           </div>
-          <div className="classItem" onPointerDown={() => toClass('Vue')}>
+          <div className="classItem" onPointerDown={() => toClass("Vue")}>
             <Image
               src="/index/2.png"
               preview={false}
@@ -146,7 +158,7 @@ const General = ({ data }: any) => {
             />
             <span className="rightText">Vue</span>
           </div>
-          <div className="classItem" onPointerDown={() => toClass('React')}>
+          <div className="classItem" onPointerDown={() => toClass("React")}>
             <Image
               src="/index/3.png"
               preview={false}
@@ -156,7 +168,7 @@ const General = ({ data }: any) => {
             />
             <span className="rightText">React</span>
           </div>
-          <div className="classItem" onPointerDown={() => toClass('Angular')}>
+          <div className="classItem" onPointerDown={() => toClass("Angular")}>
             <Image
               src="/index/4.png"
               preview={false}
@@ -166,7 +178,7 @@ const General = ({ data }: any) => {
             />
             <span className="rightText">Angular</span>
           </div>
-          <div className="classItem" onPointerDown={() => toClass('其它')}>
+          <div className="classItem" onPointerDown={() => toClass("其它")}>
             <Image
               src="/index/5.png"
               preview={false}

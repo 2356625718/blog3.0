@@ -3,9 +3,8 @@ import Head from "next/head";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Aside from "../components/Aside/Aside";
-import PageList from "../components/PageList/PageList"
-import "../styles/page.less"
-
+import PageList from "../components/PageList/PageList";
+import "../styles/page.less";
 
 const Page = () => {
   return (
@@ -19,7 +18,9 @@ const Page = () => {
           content="initial-scale=1.0, width=device-width,user-scalable=no"
         />
       </Head>
-      <div className="indexHead"><Header></Header></div>
+      <div className="indexHead">
+        <Header></Header>
+      </div>
       <PageList></PageList>
       <Footer></Footer>
       <Aside></Aside>
@@ -28,4 +29,3 @@ const Page = () => {
 };
 
 export default Page;
-

@@ -2,20 +2,24 @@
   height: auto;
   background-color: #161F27;
   padding: 1rem;
+
   .footCol {
     width: 85%;
     height: 80%;
+
     .info {
       height: auto;
       padding: 10px;
+
       .title {
         font-size: 0.9rem;
         color: white;
         letter-spacing: 6px;
         position: relative;
-        transform:translateX(1.2rem);
+        transform: translateX(1.2rem);
         font-weight: 350;
       }
+
       .title::before {
         content: "";
         display: inline-block;
@@ -27,6 +31,7 @@
         top: 10%;
         transform: translateX(-1rem);
       }
+
       .content {
         display: inline-block;
         width: 100%;
@@ -37,6 +42,7 @@
         word-break: break-all;
         text-align: justify;
       }
+
       .content2 {
         display: flex;
         justify-content: flex-start;
@@ -47,13 +53,16 @@
         line-height: 1.8;
         word-break: break-all;
         text-align: justify;
+
         .link {
           width: 25%;
         }
+
         .link2 {
           width: 33%;
         }
       }
+
       .chat {
         margin-top: 1rem;
         width: 40%;
@@ -61,6 +70,7 @@
         height: auto;
         display: flex;
         justify-content: space-between;
+
         .box {
           width: 2.5rem;
           height: 2.5rem;
@@ -70,8 +80,9 @@
           justify-content: center;
           align-items: center;
           font-size: 1.3rem;
-          color:#7B8591;
+          color: #7B8591;
         }
+
         .box:hover {
           background-color: black;
           color: white;
@@ -85,10 +96,11 @@
   border-top: 1px solid rgb(59, 61, 63);
   height: 6vh;
   background-color: #161F27;
+
   .lastCol {
     height: 100%;
     font-size: 0.3rem;
-    color:#7B8591;
+    color: #7B8591;
     display: flex;
     align-items: center;
     font-weight: 300;
@@ -98,6 +110,7 @@
 @media screen and (max-width: 962px) {
   .footRow {
     padding: 10px !important;
+
     .footCol {
       width: 100vw !important;
     }

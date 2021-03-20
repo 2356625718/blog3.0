@@ -3,14 +3,16 @@ import "github-markdown-css";
 import { Row, Col, Image } from "antd";
 import { EyeOutlined, FireOutlined } from "@ant-design/icons";
 import ReactMarkdown from "react-markdown";
-import { useRouter } from "next/router";
 import cfg from "../../utils/util_config";
 import hljs from "highlight.js";
 import "highlight.js/styles/vs2015.css";
 import React, { useEffect, useState } from "react";
+import { get } from "../../utils/util_request";
+import storage from "../../utils/util_history";
 
 const ContentCenter = () => {
   const [page, setPage] = useState({
+    p_id: -1,
     p_title: "",
     p_img: "/index/1.png",
     p_like: 0,
@@ -19,7 +21,10 @@ const ContentCenter = () => {
     p_content: "",
   });
 
+  const [flag, setFlag] = useState(true);
+
   useEffect(() => {
+    //代码高亮
     document.querySelectorAll("pre code").forEach((block: any) => {
       try {
         hljs.highlightBlock(block);
@@ -27,10 +32,20 @@ const ContentCenter = () => {
         console.log(e);
       }
     });
+    //获取文章
     if (page.p_img === "/index/1.png" && window !== undefined) {
       setPage(JSON.parse(window.sessionStorage.getItem("page") as string));
     }
+    //增加浏览量及缓存历史文章
+    if (page.p_id !== -1 && flag) {
+      setTimeout(() => {
+        get(cfg.path + "addView?id=" + page.p_id);
+        storage.store(page);
+      }, 1000);
+      setFlag(false);
+    }
   });
+
   return (
     <div className="contentBox">
       <Row className="headRow" justify="center" align="middle">

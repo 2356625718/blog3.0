@@ -1,11 +1,11 @@
-import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import { EggAppConfig, EggAppInfo, PowerPartial } from "egg";
 
 export default (appInfo: EggAppInfo) => {
   const config = {} as PowerPartial<EggAppConfig>;
 
   // override config from framework / plugin
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1612184429882_333';
+  config.keys = appInfo.name + "_1612184429882_333";
 
   // add your egg config in here
   config.middleware = ["crypto"];
@@ -16,32 +16,28 @@ export default (appInfo: EggAppInfo) => {
   };
 
   config.cors = {
-    origin: '*',//匹配规则  域名+端口  *则为全匹配
-    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+    origin: "*", //匹配规则  域名+端口  *则为全匹配
+    allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH",
   };
   //关闭csrf
   config.security = {
     csrf: {
       enable: false,
-    }
- }
+    },
+  };
 
- //数据库配置文件
- config.mysql = {
-   client: {
-    host: '127.0.0.1',
-    port: '3306',
-    user: 'root',
-    password: '235662',
-    database: 'blog'
-   },
-   app: true,
-   agent: false
- }
-
-
-
-
+  //数据库配置文件
+  config.mysql = {
+    client: {
+      host: "127.0.0.1",
+      port: "3306",
+      user: "root",
+      password: "235662",
+      database: "blog",
+    },
+    app: true,
+    agent: false,
+  };
 
   // the return config will combines to EggAppConfig
   return {
