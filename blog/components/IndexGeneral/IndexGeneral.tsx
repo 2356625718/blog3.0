@@ -47,6 +47,7 @@ const General = ({ data }: any) => {
               preview={false}
               className="jianjie"
               height="100%"
+              width="100%"
             ></Image>
             <div>
               <span className="jianjieText">{page[0].p_title}</span>
