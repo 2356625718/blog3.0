@@ -46,7 +46,7 @@ const Aside = (props: any) => {
         </div>
       </BackTop>
       <div
-        onPointerDown={() => addLike()}
+        onClick={() => addLike()}
         style={{ display: props.showLike === true ? "" : "none" }}
       >
         <Badge

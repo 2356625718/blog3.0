@@ -40,9 +40,9 @@ const General = ({ data }: any) => {
           xs={24}
           className="genCol"
         >
-          <div className="jianjieBox" onPointerDown={() => navigate(page[0])}>
+          <div className="jianjieBox" onClick={() => navigate(page[0])}>
             <Image
-              src={cfg.imgPath + page[0].p_img2}
+              src={cfg.imgPath + page[0].p_img}
               alt="图片"
               preview={false}
               className="jianjie"
@@ -57,7 +57,7 @@ const General = ({ data }: any) => {
         <Col xxl={12} xl={12} lg={0} md={0} sm={0} xs={0} className="genCol">
           <div className="right">
             <div className="rightBox">
-              <div className="imageBox" onPointerDown={() => navigate(page[1])}>
+              <div className="imageBox" onClick={() => navigate(page[1])}>
                 <Image
                   src={cfg.imgPath + page[1].p_img2}
                   preview={false}
@@ -67,7 +67,7 @@ const General = ({ data }: any) => {
                 />
                 <span className="rightText">{page[1].p_title}</span>
               </div>
-              <div className="imageBox" onPointerDown={() => navigate(page[2])}>
+              <div className="imageBox" onClick={() => navigate(page[2])}>
                 <Image
                   src={cfg.imgPath + page[2].p_img2}
                   preview={false}
@@ -81,7 +81,7 @@ const General = ({ data }: any) => {
             <div className="rightBox">
               <div
                 className="imageBox2"
-                onPointerDown={() => navigate(page[3])}
+                onClick={() => navigate(page[3])}
               >
                 <Image
                   src={cfg.imgPath + page[3].p_img2}
@@ -94,7 +94,7 @@ const General = ({ data }: any) => {
               </div>
               <div
                 className="imageBox2"
-                onPointerDown={() => navigate(page[4])}
+                onClick={() => navigate(page[4])}
               >
                 <Image
                   src={cfg.imgPath + page[4].p_img2}
@@ -119,7 +119,7 @@ const General = ({ data }: any) => {
                   <li
                     className="imgBox"
                     key={index}
-                    onPointerDown={() => navigate(item)}
+                    onClick={() => navigate(item)}
                   >
                     <Image
                       src={cfg.imgPath + item.p_img2}
@@ -139,7 +139,7 @@ const General = ({ data }: any) => {
       {/* 分类 */}
       <Row justify="center">
         <Col span={22} className="class">
-          <div className="classItem" onPointerDown={() => toClass("基础")}>
+          <div className="classItem" onClick={() => toClass("基础")}>
             <Image
               src="/index/1.png"
               preview={false}
@@ -149,7 +149,7 @@ const General = ({ data }: any) => {
             />
             <span className="rightText">基础</span>
           </div>
-          <div className="classItem" onPointerDown={() => toClass("Vue")}>
+          <div className="classItem" onClick={() => toClass("Vue")}>
             <Image
               src="/index/2.png"
               preview={false}
@@ -159,7 +159,7 @@ const General = ({ data }: any) => {
             />
             <span className="rightText">Vue</span>
           </div>
-          <div className="classItem" onPointerDown={() => toClass("React")}>
+          <div className="classItem" onClick={() => toClass("React")}>
             <Image
               src="/index/3.png"
               preview={false}
@@ -169,7 +169,7 @@ const General = ({ data }: any) => {
             />
             <span className="rightText">React</span>
           </div>
-          <div className="classItem" onPointerDown={() => toClass("Angular")}>
+          <div className="classItem" onClick={() => toClass("Angular")}>
             <Image
               src="/index/4.png"
               preview={false}
@@ -179,7 +179,7 @@ const General = ({ data }: any) => {
             />
             <span className="rightText">Angular</span>
           </div>
-          <div className="classItem" onPointerDown={() => toClass("其它")}>
+          <div className="classItem" onClick={() => toClass("其它")}>
             <Image
               src="/index/5.png"
               preview={false}

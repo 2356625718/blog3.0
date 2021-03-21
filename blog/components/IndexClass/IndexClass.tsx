@@ -44,16 +44,20 @@ const Class = ({ news }: any) => {
       setEnd(false);
       setList(msg);
       setCs(id);
-      loadMore();
+      loadMore(id);
     }
-    setTimeout(() => setLoad(false), 400);
+    setTimeout(() => setLoad(false), 100);
   };
 
   //加载更多
-  const loadMore = () => {
+  const loadMore = (id:number) => {
     window.addEventListener(
       "scroll",
       debounce(async () => {
+        if (id !== 2) {
+          window.removeEventListener("scroll", () => {});
+          return
+        }
         let rect = document
           .getElementsByClassName("content")[0]
           .getBoundingClientRect();
@@ -61,7 +65,7 @@ const Class = ({ news }: any) => {
           window.innerHeight ||
           document.documentElement.clientHeight ||
           document.body.clientHeight;
-        if (rect.bottom + 20 <= winH) {
+        if (rect.bottom <= winH) {
           let { msg } = await get(cfg.path + "indexAll" + "?start=" + start);
           start += 8;
           setList((list: any) => list.concat(msg));
@@ -80,21 +84,21 @@ const Class = ({ news }: any) => {
         <Col span="24" className="breadCol">
           <span
             className={cs === 0 ? "classify" : ""}
-            onPointerDown={() => setData(0)}
+            onClick={() => setData(0)}
           >
             最新
           </span>
           <span className="divider">/</span>
           <span
             className={cs === 1 ? "classify" : ""}
-            onPointerDown={() => setData(1)}
+            onClick={() => setData(1)}
           >
             最热
           </span>
           <span className="divider">/</span>
           <span
             className={cs === 2 ? "classify" : ""}
-            onPointerDown={() => setData(2)}
+            onClick={() => setData(2)}
           >
             所有
           </span>
@@ -106,7 +110,7 @@ const Class = ({ news }: any) => {
             <div
               className="page"
               key={index}
-              onPointerDown={() => navigate(item)}
+              onClick={() => navigate(item)}
             >
               <div className="imgBox" style={{ display: load ? "none" : "" }}>
                 <Image

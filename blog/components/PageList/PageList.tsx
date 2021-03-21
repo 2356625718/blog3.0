@@ -47,7 +47,7 @@ const PageList = () => {
             <div
               className="list"
               key={index}
-              onPointerDown={() => navigate(item)}
+              onClick={() => navigate(item)}
             >
               <div className="imgBox">
                 <Image

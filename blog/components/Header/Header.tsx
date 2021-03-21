@@ -66,7 +66,7 @@ const Header = () => {
             xs={9}
             pull={1}
           >
-            <div className="logo" onPointerDown={() => toIndex()}>
+            <div className="logo" onClick={() => toIndex()}>
               <span>Z</span>
               <span>Y</span>
               <span>'</span>
@@ -81,13 +81,13 @@ const Header = () => {
               <Popover content={<span className="controlText">搜索</span>}>
                 <span
                   className="search"
-                  onPointerDown={() => setShowSearch(!showSearch)}
+                  onClick={() => setShowSearch(!showSearch)}
                 >
                   <SearchOutlined />
                 </span>
               </Popover>
               <Popover content={<span className="controlText">浏览记录</span>}>
-                <span className="history" onPointerDown={() => toHistory()}>
+                <span className="history" onClick={() => toHistory()}>
                   <FieldTimeOutlined />
                 </span>
               </Popover>
@@ -106,7 +106,7 @@ const Header = () => {
         ></Input>
         <CloseCircleOutlined
           className="hidSearch"
-          onPointerDown={() => setShowSearch(false)}
+          onClick={() => setShowSearch(false)}
         />
       </div>
     </>

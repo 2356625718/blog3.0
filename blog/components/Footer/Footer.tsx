@@ -5,14 +5,23 @@ import { QqOutlined, WechatOutlined, GithubOutlined } from "@ant-design/icons";
 const Footer = () => {
   //复制及跳转
   const copy = async (str: string, url?: string) => {
-    await navigator.clipboard.writeText(str);
-    if (url !== undefined) {
-      message.success("平台名称复制成功,页面跳转中");
-      setTimeout(() => {
-        location.href = url;
-      }, 500);
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(str);
+      if (url !== undefined) {
+        message.success("平台名称复制成功,页面跳转中");
+        setTimeout(() => {
+          location.href = url;
+        }, 500);
+      } else {
+        message.success("账号复制成功,请手动添加");
+      }
     } else {
-      message.success("账号复制成功,请手动添加");
+      message.error("您的浏览器暂不支持,请手动添加该账号:" + str);
+      if (url !== undefined) {
+        setTimeout(() => {
+          location.href = url as any;
+        }, 1000);
+      }
     }
   };
 
@@ -28,15 +37,15 @@ const Footer = () => {
                 本博客使用nextjs+eggjs开发，如有建议，欢迎提出。
               </p>
               <div className="chat">
-                <div className="box" onPointerDown={() => copy("2356625718")}>
+                <div className="box" onClick={() => copy("2356625718")}>
                   <QqOutlined />
                 </div>
-                <div className="box" onPointerDown={() => copy("zhouyuaiqing")}>
+                <div className="box" onClick={() => copy("zhouyuaiqing")}>
                   <WechatOutlined />
                 </div>
                 <div
                   className="box"
-                  onPointerDown={() =>
+                  onClick={() =>
                     copy("2356625718", "https://github.com/2356625718")
                   }
                 >
@@ -49,7 +58,7 @@ const Footer = () => {
               <div className="content2">
                 <a
                   className="link"
-                  onPointerDown={() =>
+                  onClick={() =>
                     copy("蕾姆是我的吖", "https://www.bilibili.com")
                   }
                 >
@@ -57,7 +66,7 @@ const Footer = () => {
                 </a>
                 <a
                   className="link"
-                  onPointerDown={() => copy("有点点文艺", "https://weibo.com")}
+                  onClick={() => copy("有点点文艺", "https://weibo.com")}
                 >
                   新浪微博
                 </a>
@@ -66,7 +75,7 @@ const Footer = () => {
             <Col xxl={8} xl={8} lg={8} md={24} sm={24} xs={24} className="info">
               <div className="title">导航</div>
               <div className="content">
-                <a className="link2" href="http://127.0.0.1:3000/">
+                <a className="link2" href="http://www.zhouyu.我爱你/">
                   ZHOUYU'BlOG
                 </a>
               </div>
